@@ -4,7 +4,7 @@ import ntpath
 import cover_dataset
 
 # The filename of the download dataset
-data_dir = 'raw_dataset'
+data_dir = 'pic1'
 # The folder name you want to save the VOC format dataset
 save_dir = 'DAGM2007_VOC'
 
@@ -28,6 +28,7 @@ if __name__ == '__main__':
         # It depends on your own folder
         class_name = "Class%d" % (class_id + 1)
         class_folder_path = os.path.join(data_dir, class_name)
+        class_folder_path = os.path.join(class_folder_path, class_name)
 
         print("\n[DAGM Preprocessing] Parsing Class ID: %02d ..." % (class_id + 1))
 
@@ -55,12 +56,12 @@ if __name__ == '__main__':
                     img_id = lbl_filepath[-14:-10]
                     if data_set == "Train":
                         train_num += 1
-                        cover_dataset.write_img(class_set_folder_path, img_id, voc_train_jpg, num_sample)
-                        cover_dataset.create_xml_file(lbl_filepath, voc_train_ann, num_sample, class_name)
+                        cover_dataset.write_img(class_set_folder_path, img_id, voc_train_jpg, train_num)
+                        cover_dataset.create_xml_file(lbl_filepath, voc_train_ann, train_num, class_name)
                     else:
                         test_num += 1
-                        cover_dataset.write_img(class_set_folder_path, img_id, voc_test_jpg, num_sample)
-                        cover_dataset.create_xml_file(lbl_filepath, voc_test_ann, num_sample, class_name)
+                        cover_dataset.write_img(class_set_folder_path, img_id, voc_test_jpg, test_num)
+                        cover_dataset.create_xml_file(lbl_filepath, voc_test_ann, test_num, class_name)
 
             # Ensure the num of defect images is correct
             if num_sample != EXPECTED_DEFECTIVE_SAMPLES_PER_CLASS[data_set][class_id + 1]:
