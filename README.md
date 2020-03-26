@@ -7,7 +7,7 @@ You can download the DAGM2007 dataset from:
 ---
 Then the data directory should looks like:   
 ```
--DAGM2007\
+-raw_dataset\
     -Class1\
         -Train\
         -Test\
@@ -27,5 +27,5 @@ Then the data directory should looks like:
 
  ## Step 3: Doing something
  Using [labelImg](https://github.com/tzutalin/labelImg), we can see that the format and annotation of the dataset are correct, but some bounding-boxes may be too large.  
-  ![DAGM2007-VOC](https://github.com/Levigty/blob/master/voc.JPG)  
+  ![DAGM2007-VOC](https://github.com/Levigty/DAGM2007-to-VOC/blob/master/DAGM-VOC.JPG)  
   After getting the VOC format dataset in the save_dir, you can do defect detection.
