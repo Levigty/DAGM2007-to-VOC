@@ -1,0 +1,14 @@
+Download DAGM2007 dataset：https://hci.iwr.uni-heidelberg.de/node/3616
+
+The folder structure:
+-raw_dataset\
+    -Class1\
+        -Train\
+        -Test\
+    -Class2\
+        -Train\
+        -Test\
+    ...
+    -Class10\
+        -Train\
+        -Test\
