@@ -4,7 +4,7 @@ import ntpath
 import cover_dataset
 
 # The filename of the download dataset
-data_dir = 'pic1'
+data_dir = 'raw_dataset'
 # The folder name you want to save the VOC format dataset
 save_dir = 'DAGM2007_VOC'
 
